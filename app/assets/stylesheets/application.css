@@ -1,0 +1,51 @@
+/* Style minimaliste pour la navbar */
+.navbar {
+    padding: 0.5rem 1rem;
+    /* Réduire l'espacement */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    /* Ombre légère */
+}
+
+.navbar-brand {
+    font-size: 1.25rem;
+    /* Taille de police plus petite */
+    font-weight: 300;
+    /* Police fine */
+    letter-spacing: -0.5px;
+    /* Espacement des lettres */
+}
+
+.nav-link,
+.btn-link {
+    font-size: 0.9rem;
+    /* Taille de police réduite */
+    color: #333 !important;
+    /* Couleur de texte sombre */
+    transition: color 0.2s ease;
+    /* Transition douce */
+}
+
+.nav-link:hover,
+.btn-link:hover {
+    color: #000 !important;
+    /* Couleur plus foncée au survol */
+}
+
+/* Espacement entre les éléments de la navbar */
+.nav-item {
+    margin-right: 0.5rem;
+}
+
+/* Bouton toggler pour mobile */
+.navbar-toggler {
+    border: none;
+    /* Supprimer la bordure */
+    padding: 0.25rem;
+    /* Réduire l'espacement */
+}
+
+/* Ajustement pour le contenu principal */
+body {
+    padding-top: 60px;
+    /* Compenser la navbar fixe */
+}

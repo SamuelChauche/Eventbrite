@@ -1,0 +1,61 @@
+<style>/* Style pour la page des événements */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 300;
+    letter-spacing: -0.5px;
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .card-body {
+    padding: 1.5rem;
+  }
+
+  .btn-link {
+    font-size: 0.9rem;
+    color: #333;
+    transition: color 0.2s ease;
+  }
+
+  .btn-link:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+</style> <p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Events" %>
+
+<div class="container mt-5">
+  <h1 class="text-center fw-light mb-4">Événements</h1>
+
+  <div id="events" class="row">
+    <% @events.each do |event| %>
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <%= render event %>
+            <%= link_to "Voir cet événement", event, class: "btn btn-link text-dark text-decoration-none p-0" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="text-center mt-4">
+    <%= link_to "Créer un nouvel événement", new_event_path, class: "btn btn-link text-dark text-decoration-none" %>
+  </div>
+</div>

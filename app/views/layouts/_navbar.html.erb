@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom fixed-top">
+  <div class="container-fluid">
+    <%= link_to "Accueil", root_path, class: "navbar-brand text-dark fw-light" %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <% if user_signed_in? %>
+          <li class="nav-item me-3">
+            <%= link_to "Créer un événement", new_event_path, class: "btn btn-link text-dark text-decoration-none" %>
+          </li>
+
+          <li class="nav-item me-3">
+            <%= link_to "Modifier mon profil", edit_user_registration_path, class: "nav-link text-dark" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Se déconnecter", destroy_user_session_path, data: {turbo_method: :delete}, class: "btn btn-link text-dark text-decoration-none" %>
+          </li>
+        <% else %>
+          <li class="nav-item me-3">
+            <%= link_to "Se connecter", new_user_session_path, class: "nav-link text-dark" %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to "Créer un compte", new_user_registration_path, class: "btn btn-link text-dark text-decoration-none" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
